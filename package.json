@@ -1,0 +1,24 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Projeto para práticas com API REST desenvolvida com Node e Express",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/italoaalves/node-api-rest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/italoaalves/node-api-rest/issues"
+  },
+  "homepage": "https://github.com/italoaalves/node-api-rest#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
