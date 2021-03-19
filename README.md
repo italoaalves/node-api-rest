@@ -1,2 +1,2 @@
 # node-api-rest
-Projeto para práticas com API REST desenvolvida com Node e Express
+Rest APIs praticing project made with Node and Express
