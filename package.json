@@ -1,29 +1,30 @@
 {
   "name": "api-rest",
   "version": "1.0.0",
-  "description": "Projeto para práticas com API REST desenvolvida com Node e Express",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/index.js",
+  "repository": "git+https://github.com/italoaalves/node-api-rest.git",
+  "author": "Italo Alves <italo.alves.jp@gmail.com>",
+  "license": "Apache-2.0",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/italoaalves/node-api-rest.git"
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.5.1",
+    "sequelize-cli": "^6.2.0"
   },
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "description": "Projeto para práticas com API REST desenvolvida com Node e Express",
   "bugs": {
     "url": "https://github.com/italoaalves/node-api-rest/issues"
   },
   "homepage": "https://github.com/italoaalves/node-api-rest#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
+  "directories": {
+    "doc": "docs"
   }
 }

@@ -1,8 +1,8 @@
-import express from "express";
-import bodyParser from "body-parser";
-import morgan from "morgan";
+const express = require("express");
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
 
-import productsRoutes from "./routes/products.js";
+const usersRoutes = require("./routes/products.js");
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 
 // Routes
-app.use("/products", productsRoutes);
+app.use("/users", usersRoutes);
 
 // Error handling
 app.use((req, res, next) => {
