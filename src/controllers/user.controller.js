@@ -1,7 +1,7 @@
-const db = require("../models");
-const User = db.ecommerce.models.user;
+import { ecommerce } from "../models";
+const User = ecommerce.models.user;
 
-exports.getUser = async (req, res) => {
+export async function getUser(req, res) {
   const { id } = req.params;
 
   const user = await User.findOne({
@@ -17,9 +17,9 @@ exports.getUser = async (req, res) => {
   }
 
   return res.send(user);
-};
+}
 
-exports.createUser = async (req, res) => {
+export async function createUser(req, res) {
   const { username, password, email } = req.body;
   if (!username || !password || !email) {
     return res.status(400).send({
@@ -51,9 +51,9 @@ exports.createUser = async (req, res) => {
       message: `Error: ${err.message}`,
     });
   }
-};
+}
 
-exports.deleteUser = async (req, res) => {
+export async function deleteUser(req, res) {
   const { id } = req.body;
   if (!id) {
     return res.status(400).send({
@@ -83,9 +83,9 @@ exports.deleteUser = async (req, res) => {
       message: `Error: ${err.message}`,
     });
   }
-};
+}
 
-exports.updateUser = async (req, res) => {
+export async function updateUser(req, res) {
   const { username, password } = req.body;
   const { id } = req.params;
 
@@ -118,4 +118,4 @@ exports.updateUser = async (req, res) => {
       message: `Error: ${err.message}`,
     });
   }
-};
+}

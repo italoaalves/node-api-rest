@@ -1,17 +1,18 @@
-require("dotenv").config();
+import "dotenv/config";
 
-const jwt = require("jsonwebtoken");
+import { sign } from "jsonwebtoken";
+import { ecommerce } from "../models";
+import { createUser } from "./user.controller";
 
-const db = require("../models");
-const User = db.ecommerce.models.user;
+const User = ecommerce.models.user;
 
 const _createToken = ({ email, id }) => {
-  return jwt.sign({ email, id }, process.env.SECRET, {
+  return sign({ email, id }, process.env.SECRET, {
     expiresIn: process.env.TOKEN_EXPIRATION,
   });
 };
 
-exports.login = async (req, res, next) => {
+export async function login(req, res, next) {
   try {
     const { email, password } = req.body;
 
@@ -43,8 +44,12 @@ exports.login = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-};
+}
 
-exports.register = async (req, res, next) => {
-  // extracts req.body atributes and creates a new user
-};
+export async function register(req, res, next) {
+  try {
+    createUser(req, res, next);
+  } catch (err) {
+    next(err);
+  }
+}
