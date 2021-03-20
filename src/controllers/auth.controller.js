@@ -6,7 +6,9 @@ const db = require("../models");
 const User = db.ecommerce.models.user;
 
 const _createToken = ({ email, id }) => {
-  return jwt.sign({ email, id }, process.env.SECRET);
+  return jwt.sign({ email, id }, process.env.SECRET, {
+    expiresIn: process.env.TOKEN_EXPIRATION,
+  });
 };
 
 exports.login = async (req, res, next) => {
@@ -21,7 +23,7 @@ exports.login = async (req, res, next) => {
       where: {
         email,
       },
-    }).select("+password");
+    });
 
     if (!user || password != user.password) {
       return;
@@ -45,4 +47,8 @@ exports.login = async (req, res, next) => {
 
 exports.register = async (req, res, next) => {
   // extracts req.body atributes and creates a new user
+};
+
+exports.logout = async (req, res, next) => {
+  // logs the user off
 };

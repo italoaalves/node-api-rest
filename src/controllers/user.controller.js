@@ -20,8 +20,8 @@ exports.getUser = async (req, res) => {
 };
 
 exports.createUser = async (req, res) => {
-  const { username, password } = req.body;
-  if (!username || !password) {
+  const { username, password, email } = req.body;
+  if (!username || !password || !email) {
     return res.status(400).send({
       message: "Please provide a username and a password to create a user!",
     });
@@ -43,6 +43,7 @@ exports.createUser = async (req, res) => {
     let newUser = await User.create({
       username,
       password,
+      email,
     });
     return res.send(newUser);
   } catch (err) {
