@@ -1,11 +1,23 @@
 # node-api-rest
+
+## Description
+
 Rest APIs praticing project made with Node and Express
 
 ## How to setup this project
 
+### Dependencies
+
+- node
+- docker
+- docker-compose
+
+### Getting started
+
 ```bash
 # Clone this repository
 git clone https://github.com/italoaalves/node-api-rest
+cd ./node-api-rest
 
 # Create a docker volume called restpsql or edit docker-compose.yml for the desired name
 docker volume create --name=restpsql
@@ -23,4 +35,3 @@ echo "YOUR_ENV_VARIABLE=VALUE" > .env
 # Start debugging
 npm run dev
 ```
-
