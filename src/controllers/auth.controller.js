@@ -27,13 +27,13 @@ exports.login = async (req, res, next) => {
       return;
     }
 
-    const authorization = _createToken(user);
+    const token = _createToken(user);
 
     user.password = undefined;
 
     res.status(200).json({
       status: "OK",
-      authorization,
+      authorization: token,
       data: {
         user,
       },
