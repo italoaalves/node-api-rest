@@ -4,6 +4,13 @@
 
 Rest APIs praticing project made with Node and Express
 
+## Features
+
+- Simple CRUD
+- JWT Athentication with time expiring token
+- JWT Authorization via middleware
+- Database ORM using sequelize
+
 ## How to setup this project
 
 ### Dependencies
