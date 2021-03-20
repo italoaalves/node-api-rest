@@ -29,8 +29,9 @@ docker-compose -f "docker-compose.yml" up -d --build
 npm install
 
 # Setup your postgres dotenv settings according to the docker-compose.yml
-# of course you can just use a text editor too '-'
+# or your local database setup for development
 echo "YOUR_ENV_VARIABLE=VALUE" > .env
+# of course you can just use a text editor too '-'
 
 # Start debugging
 npm run dev
