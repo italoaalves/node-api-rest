@@ -42,3 +42,7 @@ exports.login = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.register = async (req, res, next) => {
+  // extracts req.body atributes and creates a new user
+};
